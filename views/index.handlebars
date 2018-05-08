@@ -1,26 +1,33 @@
-<h1>MVC BURGER!</h1>
+<br><center><h1>MVC Burgers!</h1></center><br>
 
 <main>
   <div class="container">
     <div class="row">
-      <div class="col s6">
+      <div class="col-lg-6">
+		  <h3>Up for grabs:</h3><br>
         {{#each burgers}}
           {{#unless this.devoured}}
             <div>
-              <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
-                <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
-              </form>
+				
+             <h3>{{this.burger_name}}</h3> 
+			 
+			<form action="/burgers/{{this.id}}?_method=PUT" method="POST">
+                 <button type="submit">Devour it!</button>
+            </form>
+
             </div>
           {{/unless}}
         {{/each}}
       </div>
 
-      <div class="col s6">
+
+      <div class="col-lg-6">
+		  <h3>Already devoured:</h3><br>
         {{#each burgers}}
           {{#if this.devoured}}
             <div class='burgerEaten'>
               <div>
-                {{this.burger_name}}
+                <h3>{{this.burger_name}}</h3>
               </div>
             </div>
           {{/if}}
@@ -30,13 +37,15 @@
   </div>
 </main>
 
-<h2>Add A Burger Option</h2>
+<center><br><h2>Don't see one you like?</h2><br><H3>No worries, add a burger here:</H3><br></center>
 
+<center>
 <div class="row">
-  <div class="col s12">
+  <div class="col-lg-12">
     <form action="/burgers" method="POST">
-      <input type="text" id="name" name="burger_name" placeholder="Order a delicious burger!">
-      <button type="submit" class="addBurgerButton">Add The Burger</button>
+      <input type="text" id="name" name="burger_name" placeholder=" ">
+      <button type="submit" class="addBurgerButton">Add a New Burger</button>
     </form>
   </div>
 </div>
+</center>
