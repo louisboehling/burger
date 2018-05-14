@@ -23,6 +23,8 @@ app.set('view engine', 'handlebars');
 // Import routes and give the server access to them.
 var routes = require("./controllers/burgers_controller.js");
 
+var devourBurger = require('./models/burger.js');
+
 app.use(routes);
 
 // Start our server so that it can begin listening to client requests.

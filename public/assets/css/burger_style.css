@@ -1,0 +1,16 @@
+body {
+    border: solid;
+    border-width: 10px;
+    border-color: red;
+    background: rgb(255, 216, 88);
+  }
+
+h2 {
+    font-weight: bold;
+    color: red;
+}
+
+h1 {
+    font-weight: bold;
+    color: red;
+}
